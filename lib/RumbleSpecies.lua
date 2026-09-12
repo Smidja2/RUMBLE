@@ -1,0 +1,170 @@
+local V = ...
+local S={byDex={
+  [1]="HUSIGIDANE", -- BULBASAUR
+  [2]="HUSIGISOU", -- IVYSAUR
+  [3]="HUSIGIBANA_M", -- VENUSAUR
+  [4]="HITOKAGE", -- CHARMANDER
+  [5]="RIZAADO", -- CHARMELEON
+  [6]="RIZAADON", -- CHARIZARD
+  [7]="ZENIGAME", -- SQUIRTLE
+  [8]="KAMEERU", -- WARTORTLE
+  [9]="KAMEKKUSU", -- BLASTOISE
+  [10]="KYATAPII", -- CATERPIE
+  [11]="TORANSERU", -- METAPOD
+  [12]="BATAHURII_M", -- BUTTERFREE
+  [13]="BIIDORU", -- WEEDLE
+  [14]="KOKUUN", -- KAKUNA
+  [15]="SUPIAA", -- BEEDRILL
+  [16]="POPPO", -- PIDGEY
+  [17]="PIZYON", -- PIDGEOTTO
+  [18]="PIZYOTTO", -- PIDGEOT
+  [19]="KORATTA_M", -- RATTATA
+  [20]="RATTA_M", -- RATICATE
+  [21]="ONISUZUME", -- SPEAROW
+  [22]="ONIDORIRU", -- FEAROW
+  [23]="AABO", -- EKANS
+  [24]="AABOKKU", -- ARBOK
+  [25]="PIKATYUU_M", -- PIKACHU
+  [26]="RAITYUU_M", -- RAICHU
+  [27]="SANDO", -- SANDSHREW
+  [28]="SANDOPAN", -- SANDSLASH
+  [29]="NIDORAN_F", -- NIDORAN_F
+  [30]="NIDORIINA", -- NIDORINA
+  [31]="NIDOKUIN", -- NIDOQUEEN
+  [32]="NIDORAN_M", -- NIDORAN_M
+  [33]="NIDORIINO", -- NIDORINO
+  [34]="NIDOKINGU", -- NIDOKING
+  [35]="PIPPI", -- CLEFAIRY
+  [36]="PIKUSII", -- CLEFABLE
+  [37]="ROKON", -- VULPIX
+  [38]="KYUUKON", -- NINETALES
+  [39]="PURIN", -- JIGGLYPUFF
+  [40]="PUKURIN", -- WIGGLYTUFF
+  [41]="ZUBATTO_M", -- ZUBAT
+  [42]="GORUBATTO_M", -- GOLBAT
+  [43]="NAZONOKUSA", -- ODDISH
+  [44]="KUSAIHANA_M", -- GLOOM
+  [45]="RAHURESIA_M", -- VILEPLUME
+  [46]="PARASU", -- PARAS
+  [47]="PARASEKUTO", -- PARASECT
+  [48]="KONPAN", -- VENONAT
+  [49]="MORUFON", -- VENOMOTH
+  [50]="DHIGUDA", -- DIGLETT
+  [51]="DAGUTORIO", -- DUGTRIO
+  [52]="NYAASU", -- MEOWTH
+  [53]="PERUSIAN", -- PERSIAN
+  [54]="KODAKKU", -- PSYDUCK
+  [55]="GORUDAKKU", -- GOLDUCK
+  [56]="MANKII", -- MANKEY
+  [57]="OKORIZARU", -- PRIMEAPE
+  [58]="GAADHI", -- GROWLITHE
+  [59]="UINDHI", -- ARCANINE
+  [60]="NYOROMO", -- POLIWAG
+  [61]="NYOROZO", -- POLIWHIRL
+  [62]="NYOROBON", -- POLIWRATH
+  [63]="KEESHI", -- ABRA
+  [64]="YUNGERAA_M", -- KADABRA
+  [65]="HUUDHIN_M", -- ALAKAZAM
+  [66]="WANRIKII", -- MACHOP
+  [67]="GOORIKII", -- MACHOKE
+  [68]="KAIRIKII", -- MACHAMP
+  [69]="MADATUBOMI", -- BELLSPROUT
+  [70]="UTUDON", -- WEEPINBELL
+  [71]="UTUBOTTO", -- VICTREEBEL
+  [72]="MENOKURAGE", -- TENTACOOL
+  [73]="DOKUKURAGE", -- TENTACRUEL
+  [74]="ISITUBUTE", -- GEODUDE
+  [75]="GOROON", -- GRAVELER
+  [76]="GOROONYA", -- GOLEM
+  [77]="PONIITA", -- PONYTA
+  [78]="GYAROPPU", -- RAPIDASH
+  [79]="YADON", -- SLOWPOKE
+  [80]="YADORAN", -- SLOWBRO
+  [81]="KOIRU", -- MAGNEMITE
+  [82]="REAKOIRU", -- MAGNETON
+  [83]="KAMONEGI", -- FARFETCHD
+  [84]="DOODOO_M", -- DODUO
+  [85]="DOODORIO_M", -- DODRIO
+  [86]="PAUWAU", -- SEEL
+  [87]="ZYUGON", -- DEWGONG
+  [88]="BETOBETAA", -- GRIMER
+  [89]="BETOBETON", -- MUK
+  [90]="SHERUDAA", -- SHELLDER
+  [91]="PARUSHEN", -- CLOYSTER
+  [92]="GOOSU", -- GASTLY
+  [93]="GOOSUTO", -- HAUNTER
+  [94]="GENGAA", -- GENGAR
+  [95]="IWAAKU", -- ONIX
+  [96]="SURIIPU", -- DROWZEE
+  [97]="SURIIPAA_M", -- HYPNO
+  [98]="KURABU", -- KRABBY
+  [99]="KINGURAA", -- KINGLER
+  [100]="BIRIRIDAMA", -- VOLTORB
+  [101]="MARUMAIN", -- ELECTRODE
+  [102]="TAMATAMA", -- EXEGGCUTE
+  [103]="NASSII", -- EXEGGUTOR
+  [104]="KARAKARA", -- CUBONE
+  [105]="GARAGARA", -- MAROWAK
+  [106]="SAWAMURAA", -- HITMONLEE
+  [107]="EBIWARAA", -- HITMONCHAN
+  [108]="BERORINGA", -- LICKITUNG
+  [109]="DOGAASU", -- KOFFING
+  [110]="MATADOGASU", -- WEEZING
+  [111]="SAIHOON_M", -- RHYHORN
+  [112]="SAIDON_M", -- RHYDON
+  [113]="RAKKII", -- CHANSEY
+  [114]="MONZYARA", -- TANGELA
+  [115]="GARUURA", -- KANGASKHAN
+  [116]="TATTUU", -- HORSEA
+  [117]="SIIDORA", -- SEADRA
+  [118]="TOSAKINTO_M", -- GOLDEEN
+  [119]="AZUMAOU_M", -- SEAKING
+  [120]="HITODEMAN", -- STARYU
+  [121]="SUTAAMII", -- STARMIE
+  [122]="BARIYAADO", -- MR_MIME
+  [123]="SUTORAIKU_M", -- SCYTHER
+  [124]="RUUZYURA", -- JYNX
+  [125]="EREBUU", -- ELECTABUZZ
+  [126]="BUUBAA", -- MAGMAR
+  [127]="KAIROSU", -- PINSIR
+  [128]="KENTAROSU", -- TAUROS
+  [129]="KOIKINGU_M", -- MAGIKARP
+  [130]="GYARADOSU_M", -- GYARADOS
+  [131]="RAPURASU", -- LAPRAS
+  [132]="METAMON", -- DITTO
+  [133]="IIBUI", -- EEVEE
+  [134]="SYAWAAZU", -- VAPOREON
+  [135]="SANDAASU", -- JOLTEON
+  [136]="BUUSUTAA", -- FLAREON
+  [137]="PORIGON", -- PORYGON
+  [138]="OMUNAITO", -- OMANYTE
+  [139]="OMUSUTAA", -- OMASTAR
+  [140]="KABUTO", -- KABUTO
+  [141]="KABUTOPUSU", -- KABUTOPS
+  [142]="PUTERA", -- AERODACTYL
+  [143]="KABIGON", -- SNORLAX
+  [144]="HURIIZAA", -- ARTICUNO
+  [145]="SANDAA", -- ZAPDOS
+  [146]="FAIYAA", -- MOLTRES
+  [147]="MINIRYUU", -- DRATINI
+  [148]="HAKURYUU", -- DRAGONAIR
+  [149]="KAIRYUU", -- DRAGONITE
+  [150]="MYUUTUU", -- MEWTWO
+  [151]="MYUU", -- MEW
+}}
+local function clean(s)return type(s)=='string' and s:upper():gsub('[^A-Z0-9]','') or nil end
+function S.dex(v)
+ if type(v)=='number' then local n=math.floor(v);if n>=1 and n<=151 then return n end end
+ if type(v)~='string' then return nil end;local n=tonumber(v);if n then return S.dex(n) end
+ local ok,Game=pcall(require,'src.core.Game');local data=ok and Game and Game.data;local pokemon=data and data.pokemon;if not pokemon then return nil end
+ local d=pokemon[v] or pokemon[v:upper()];if d and d.dex then return S.dex(d.dex) end;local c=clean(v);for k,def in pairs(pokemon) do if clean(k)==c and def.dex then return S.dex(def.dex) end end
+end
+function S.base(dex,sex,index)
+ local base=S.byDex[dex];if not base then return nil end
+ if sex=='F' or sex=='FEMALE' or sex==1 then
+  if base:sub(-2)=='_M' then local f=base:sub(1,-3)..'_F';if index and index[f..'.bcres.cx'] then return f end end
+  local f=base..'_F';if index and index[f..'.bcres.cx'] then return f end
+ end
+ return base
+end
+return S
